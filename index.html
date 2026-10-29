@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description" content="Zoha Abdul Sattar - Computer Teacher, Web Developer & IT Professional from Punjab, Pakistan.">
+    <meta name="author" content="Zoha Abdul Sattar">
+    <meta name="theme-color" content="#FFF9F5">
+    <title>Zoha Abdul Sattar | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* FIXED - WEB + MOBILE PIC SHOW - NO CONTENT CHANGE */
+        .hero { overflow:visible !important; }
+        .hero-grid { display:grid; grid-template-columns:1.1fr 0.9fr; gap:40px; align-items:center; }
+        .hero-text { min-width:0; width:100%; overflow:visible; }
+        .hero-image-area { position:relative; display:flex; justify-content:center; align-items:center; padding:10px; overflow:visible !important; visibility:visible !important; opacity:1 !important; }
+        .image-wrapper { width:340px; height:480px; overflow:hidden; border-radius:180px 180px 28px 28px; border:7px solid #fff; box-shadow:0 15px 50px rgba(109,59,80,0.15), 0 0 0 2px #F8C8DC; background:#FDF1F4; display:block !important; visibility:visible !important; opacity:1 !important; }
+        .image-wrapper img { width:100% !important; height:100% !important; object-fit:cover !important; object-position:center 15% !important; display:block !important; visibility:visible !important; }
+        
+        @media (max-width:880px){
+            body { overflow-x:hidden !important; }
+            .hero { padding:25px 0 20px !important; }
+            .hero-grid { display:flex !important; flex-direction:column !important; gap:22px !important; width:100% !important; }
+            .hero-image-area { order:-1 !important; width:100% !important; padding:0 0 10px 0 !important; }
+            .image-wrapper { width:300px !important; height:420px !important; max-width:88vw !important; margin:0 auto !important; }
+            .hero-text { order:1 !important; width:100% !important; max-width:100% !important; text-align:center !important; padding:0 4% !important; box-sizing:border-box !important; }
+            .hero-text h1 { font-size:clamp(1.9rem, 7vw, 2.5rem) !important; line-height:1.25 !important; }
+            .hero-btns, .social-icons, .marquee-wrap { justify-content:center !important; width:100% !important; flex-wrap:wrap !important; }
+            .marquee-wrap { max-width:100% !important; overflow:hidden !important; }
+            .skills-row { grid-template-columns:repeat(3, 1fr) !important; }
+            .float-card { font-size:0.85rem !important; padding:8px 12px !important; }
+            .card-top { right:10px !important; top:5px !important; }
+            .card-bottom { left:10px !important; bottom:10px !important; }
+        }
+        @media (max-width:480px){
+            .hero-text { padding:0 5% !important; }
+            .image-wrapper { width:260px !important; height:360px !important; }
+            .skills-row { grid-template-columns:repeat(2, 1fr) !important; }
+            .float-card { display:none !important; }
+        }
+        @media (max-width:390px){
+            .image-wrapper { width:230px !important; height:320px !important; }
+        }
+    </style>
+</head>
+<body>
+<header class="navbar">
+    <div class="container nav-container">
+        <a href="index.html" class="logo"><i class="fa-solid fa-heart"></i><span class="logo-text"><span class="logo-name">Zoha Abdul Sattar</span><span class="logo-sub">Portfolio</span></span></a>
+        <nav><ul class="nav-links" id="navLinks"><li><a href="index.html" class="active">Home</a></li><li><a href="about.html">About</a></li><li><a href="skills.html">Skills</a></li><li><a href="projects.html">Projects</a></li><li><a href="services.html">Services</a></li><li><a href="books.html">Books</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+        <div class="nav-actions"><a href="contact.html" class="btn btn-primary btn-talk">Let's Talk <i class="fa-solid fa-paper-plane"></i></a><button class="menu-btn" id="menuBtn" type="button"><i class="fa-solid fa-bars"></i></button></div>
+    </div>
+</header>
+<main>
+    <section class="hero">
+        <div class="container hero-grid">
+            <!-- TEXT -->
+            <div class="hero-text">
+                <p class="badge"><i class="fa-solid fa-heart"></i> Computer Teacher • Web Developer • IT Professional</p>
+                <h1>Hello, I'm<br><span>Zoha Abdul Sattar</span></h1>
+                <p class="subtitle">Turning Ideas Into Beautiful Web Experiences</p>
+                <p class="description">I'm a passionate Computer Teacher and Web Developer from Punjab, Pakistan. I build modern, responsive websites and love teaching technology to students. My mission is to make tech education simple, beautiful and accessible.</p>
+                <div class="hero-btns"><a href="projects.html" class="btn btn-primary">View My Work <i class="fa-solid fa-arrow-right"></i></a><a href="about.html" class="btn btn-outline"><i class="fa-regular fa-user"></i> About Me</a></div>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/zoha-abdul-sattar-a98998444" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://github.com/zohaabdulsattar02-dev" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.instagram.com/zoha_abdulsattar/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/923707905040" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="mailto:zohaabdulsattar01@gmail.com" onclick="window.open('https://mail.google.com/mail/?view=cm&to=zohaabdulsattar01@gmail.com','_blank'); return false;"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+                <p class="note">Let's create something amazing together! ♡</p>
+                <div class="marquee-wrap"><div class="marquee-track"><span><i class="fa-solid fa-code"></i> Web Development</span><span><i class="fa-solid fa-palette"></i> UI/UX Design</span><span><i class="fa-solid fa-graduation-cap"></i> Computer Teaching</span><span><i class="fa-solid fa-database"></i> PHP & MySQL</span><span><i class="fa-solid fa-mobile-screen-button"></i> Flutter</span><span><i class="fa-solid fa-laptop"></i> MS Office</span><span><i class="fa-solid fa-code"></i> Web Development</span><span><i class="fa-solid fa-palette"></i> UI/UX Design</span><span><i class="fa-solid fa-graduation-cap"></i> Computer Teaching</span><span><i class="fa-solid fa-database"></i> PHP & MySQL</span></div></div>
+            </div>
+            <!-- IMAGE -->
+            <div class="hero-image-area">
+                <div class="image-wrapper"><img src="assets/profile.jpg" alt="Zoha Abdul Sattar" onerror="this.src='images/profile.jpg'"></div>
+                <div class="float-card card-top">Good Code<br>+ Great Education<br>= <strong>Better Future</strong></div>
+                <div class="float-card card-bottom">Dream<br>Plan<br>Code<br>Achieve</div>
+            </div>
+        </div>
+    </section>
+    <section class="skills-strip">
+        <div class="container">
+            <div class="skills-row">
+                <div class="skill-item"><div class="icon"><i class="fa-solid fa-code"></i></div><h3>Web Development</h3><p>HTML • CSS • JS • PHP</p></div>
+                <div class="skill-item"><div class="icon"><i class="fa-solid fa-graduation-cap"></i></div><h3>Computer Teaching</h3><p>Grade 6 – 12</p></div>
+                <div class="skill-item"><div class="icon"><i class="fa-solid fa-palette"></i></div><h3>UI/UX Design</h3><p>Responsive Design</p></div>
+                <div class="skill-item"><div class="icon"><i class="fa-solid fa-layer-group"></i></div><h3>Full Stack</h3><p>PHP • MySQL • Flutter</p></div>
+                <div class="skill-item"><div class="icon"><i class="fa-solid fa-laptop"></i></div><h3>MS Office</h3><p>Word • Excel • PowerPoint</p></div>
+                <div class="skill-item"><div class="icon"><i class="fa-solid fa-keyboard"></i></div><h3>Data Entry</h3><p>Documents • Data Management</p></div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="footer">
+    <div class="container footer-grid">
+        <div><p class="footer-name">Zoha Abdul Sattar</p><p class="footer-text"><a href="https://wa.me/923707905040">03707905040</a> | <a href="mailto:zohaabdulsattar01@gmail.com">zohaabdulsattar01@gmail.com</a><br>Punjab, Pakistan</p></div>
+        <ul class="footer-links"><li><a href="about.html">About</a></li><li><a href="skills.html">Skills</a></li><li><a href="projects.html">Projects</a></li><li><a href="services.html">Services</a></li><li><a href="books.html">Books</a></li><li><a href="contact.html">Contact</a></li></ul>
+    </div>
+    <p class="copy">© <span id="currentYear">2026</span> Zoha Abdul Sattar. All rights reserved.</p>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

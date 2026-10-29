@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Zoha Abdul Sattar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .project-top-meta{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;padding:12px 16px 0}
+        .project-number{font-size:12px;color:var(--text-muted,#7C6370);font-weight:600}
+        .project-gallery-wrap{padding:12px 16px 0}
+        .project-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:10px;max-height:320px;overflow-y:auto;padding:4px}
+        .project-gallery img,.project-gallery video{width:100%;height:90px;object-fit:cover;border-radius:12px;border:1px solid var(--border,#F2DCE2);cursor:pointer;transition:0.2s;background:#FDF1F4}
+        .project-gallery img:hover,.project-gallery video:hover{transform:scale(1.03);box-shadow:0 6px 16px rgba(109,59,80,0.15)}
+        .project-details-box{background:#FDF1F4;border:1px solid var(--border,#F2DCE2);border-radius:14px;padding:14px 16px;margin:12px 0}
+        .project-details-box h4{font-size:14px;margin-bottom:8px;color:var(--deep-plum,#6D3B50)}
+        .project-details-box ul{padding-left:18px;margin:0}
+        .project-details-box li{font-size:13px;color:var(--text-muted,#7C6370);margin-bottom:4px;list-style:disc}
+        .project-short{font-size:0.9rem;color:var(--text-muted,#7C6370);margin-bottom:10px}
+        .gallery-empty{font-size:13px;color:var(--text-muted,#7C6370);padding:20px;text-align:center;background:#FDF1F4;border-radius:12px}
+        .media-badge{position:absolute;top:6px;right:6px;background:rgba(0,0,0,0.7);color:#fff;font-size:10px;padding:3px 7px;border-radius:999px}
+        .media-wrap{position:relative}
+        /* Lightbox */
+        .lightbox{display:none;position:fixed;inset:0;background:rgba(61,42,53,0.92);z-index:9999;align-items:center;justify-content:center;padding:20px}
+        .lightbox.open{display:flex}
+        .lightbox-content{max-width:92vw;max-height:85vh;text-align:center}
+        .lightbox-content img,.lightbox-content video{max-width:100%;max-height:75vh;border-radius:12px;object-fit:contain;background:#000}
+        .lightbox-caption{color:#fff;margin-top:10px;font-size:14px}
+        .lightbox-close{position:absolute;top:16px;right:16px;background:#fff;border:none;width:42px;height:42px;border-radius:50%;font-size:18px;cursor:pointer;color:#6D3B50}
+        .lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.9);border:none;width:44px;height:44px;border-radius:50%;font-size:16px;cursor:pointer;color:#6D3B50}
+        .lightbox-prev{left:12px}.lightbox-next{right:12px}
+        @media(max-width:600px){.project-gallery{grid-template-columns:repeat(3,1fr);max-height:240px}.project-gallery img,.project-gallery video{height:80px}}
+    </style>
+</head>
+<body>
+<nav class="navbar">
+    <div class="container nav-container">
+        <a href="index.html" class="logo"><i class="fa-solid fa-heart"></i><div><span class="logo-name">Zoha Abdul Sattar</span><span class="logo-sub">Teacher & Developer</span></div></a>
+        <div class="nav-links" id="navLinks"><a href="index.html">Home</a><a href="about.html">About</a><a href="skills.html">Skills</a><a href="projects.html" class="active">Projects</a><a href="books.html">Books</a><a href="services.html">Services</a><a href="contact.html">Contact</a></div>
+        <div class="nav-actions"><a href="contact.html" class="btn btn-primary btn-talk">Let's Talk</a><button class="menu-btn" id="menuBtn"><i class="fa-solid fa-bars"></i></button></div>
+    </div>
+</nav>
+
+<main>
+    <section class="page-head"><div class="container"><h1>My Projects</h1><p>Selected work in design and development</p></div></section>
+    <section class="section"><div class="container"><div class="projects-grid">
+
+        <article class="project-card">
+            <div class="project-top-meta"><span class="project-number">Project #1</span><span class="status-badge status-done">Completed</span></div>
+            <div class="project-gallery-wrap"><div id="gallery-1" class="project-gallery"></div></div>
+            <div class="project-content">
+                <h3>Birthday & Engagement Cards</h3>
+                <p class="project-short">Digital greeting cards with creative layouts and decorative elements.</p>
+                <div class="project-details-box"><h4>Overview</h4><ul><li>Elegant layouts for birthdays and engagements</li><li>Refined typography and visual hierarchy</li><li>Reusable templates for client use</li></ul></div>
+                <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                <div class="project-links"><a href="https://github.com/zohaabdulsattar02-dev/birthday-and-engagement-cards" target="_blank" class="btn btn-primary btn-sm"><i class="fa-solid fa-code-branch"></i> View Repository</a></div>
+            </div>
+        </article>
+
+        <article class="project-card">
+            <div class="project-top-meta"><span class="project-number">Project #2</span><span class="status-badge status-done">Completed</span></div>
+            <div class="project-gallery-wrap"><div id="gallery-2" class="project-gallery"></div></div>
+            <div class="project-content">
+                <h3>Digital Mart — E-commerce Website</h3>
+                <p class="project-short">E-commerce platform for product browsing and order management.</p>
+                <div class="project-details-box"><h4>Overview</h4><ul><li>Product browsing and categorization</li><li>Shopping cart and wishlist functionality</li><li>Administrative product management</li></ul></div>
+                <div class="project-tags"><span>HTML</span><span>Bootstrap</span><span>PHP</span><span>MySQL</span></div>
+                <div class="project-links"><a href="https://github.com/zohaabdulsattar02-dev/digital-mart" target="_blank" class="btn btn-primary btn-sm"><i class="fa-solid fa-code-branch"></i> View Repository</a></div>
+            </div>
+        </article>
+
+        <article class="project-card">
+            <div class="project-top-meta"><span class="project-number">Project #3</span><span class="status-badge status-done">Completed</span></div>
+            <div class="project-gallery-wrap"><div id="gallery-3" class="project-gallery"></div></div>
+            <div class="project-content">
+                <h3>School Fee Management System</h3>
+                <p class="project-short">Fee records, reporting and printable slips for educational institutions.</p>
+                <div class="project-details-box"><h4>Overview</h4><ul><li>Student and family fee records</li><li>Payment tracking and history</li><li>Reports and printable receipts</li></ul></div>
+                <div class="project-tags"><span>PHP</span><span>MySQL</span><span>JavaScript</span></div>
+                <div class="project-links"><a href="https://github.com/zohaabdulsattar02-dev/school-fee-management-system" target="_blank" class="btn btn-primary btn-sm"><i class="fa-solid fa-code-branch"></i> View Repository</a></div>
+            </div>
+        </article>
+
+        <article class="project-card">
+            <div class="project-top-meta"><span class="project-number">Project #4</span><span class="status-badge status-process">In Progress</span></div>
+            <div class="project-gallery-wrap"><div id="gallery-4" class="project-gallery"></div></div>
+            <div class="project-content">
+                <h3>School Management App</h3>
+                <p class="project-short">Cross-platform application for school information and services.</p>
+                <div class="project-details-box"><h4>Overview</h4><ul><li>Centralized school information system</li><li>Modular architecture for future expansion</li><li>Built with Flutter and Supabase</li></ul></div>
+                <div class="project-tags"><span>Flutter</span><span>Dart</span><span>Supabase</span></div>
+                <div class="project-links"><a href="https://github.com/zohaabdulsattar02-dev/school-management-app" target="_blank" class="btn btn-primary btn-sm"><i class="fa-solid fa-code-branch"></i> View Repository</a></div>
+            </div>
+        </article>
+
+    </div></div></section>
+</main>
+
+<div id="imageLightbox" class="lightbox">
+    <button class="lightbox-close" id="lightboxClose"><i class="fa-solid fa-xmark"></i></button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev"><i class="fa-solid fa-chevron-left"></i></button>
+    <div class="lightbox-content">
+        <img id="lightboxImg" src="" alt="" style="display:none">
+        <video id="lightboxVideo" controls style="display:none"></video>
+        <p id="lightboxCaption" class="lightbox-caption"></p>
+    </div>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext"><i class="fa-solid fa-chevron-right"></i></button>
+</div>
+
+<footer class="footer"><div class="container"><div class="footer-grid"><div><p class="footer-name">Zoha Abdul Sattar</p><p class="footer-text"><a href="https://wa.me/923707905040">0370-7905040</a> | <a href="mailto:zohaabdulsattar01@gmail.com">zohaabdulsattar01@gmail.com</a><br>Raiwind, Lahore, Pakistan</p></div><div class="footer-links"><a href="about.html">About</a><a href="skills.html">Skills</a><a href="projects.html">Projects</a><a href="services.html">Services</a><a href="books.html">Books</a><a href="contact.html">Contact</a></div></div><p class="copy">© <span id="currentYear">2026</span> Zoha Abdul Sattar. All rights reserved.</p></div></footer>
+
+<script src="js/main.js"></script>
+<script>
+(function(){
+    const MAX=20;
+    const folders=[1,2,3,4];
+    const galleryData={};
+    const imgExt=['jpg','jpeg','png','webp'];
+    const vidExt=['mp4','webm','mov','m4v'];
+
+    function tryLoad(folder,num){
+        return new Promise(resolve=>{
+            let tried=[];
+            // try images first then videos
+            const all = [...imgExt.map(e=>({ext:e,type:'image'})), ...vidExt.map(e=>({ext:e,type:'video'}))];
+            let i=0;
+            function next(){
+                if(i>=all.length){ resolve(null); return; }
+                const {ext,type}=all[i++];
+                const src=`assets/${folder}/${num}.${ext}`;
+                if(type==='image'){
+                    const im=new Image();
+                    im.onload=()=>resolve({src,type});
+                    im.onerror=next;
+                    im.src=src;
+                }else{
+                    fetch(src,{method:'HEAD'}).then(r=>{
+                        if(r.ok) resolve({src,type});
+                        else next();
+                    }).catch(next);
+                }
+            }
+            next();
+        });
+    }
+
+    async function buildGallery(folder){
+        const box=document.getElementById('gallery-'+folder);
+        if(!box) return;
+        const list=[];
+        for(let n=1;n<=MAX;n++){
+            const found=await tryLoad(folder,n);
+            if(found) list.push(found);
+        }
+        galleryData[folder]=list;
+        if(list.length===0){ box.innerHTML='<p class="gallery-empty">Gallery will be updated soon.</p>'; return; }
+        box.innerHTML=list.map((item,idx)=>{
+            if(item.type==='image'){
+                return `<div class="media-wrap"><img src="${item.src}" alt="Project ${folder} ${idx+1}" data-folder="${folder}" data-index="${idx}" loading="lazy"></div>`;
+            }else{
+                return `<div class="media-wrap"><video src="${item.src}" data-folder="${folder}" data-index="${idx}" muted preload="metadata"></video><span class="media-badge"><i class="fa-solid fa-play"></i></span></div>`;
+            }
+        }).join('');
+        box.querySelectorAll('[data-index]').forEach(el=>el.addEventListener('click',()=>openLightbox(folder,parseInt(el.dataset.index))));
+    }
+
+    let curFolder=1, curIdx=0;
+    const lb=document.getElementById('imageLightbox'), lbImg=document.getElementById('lightboxImg'), lbVid=document.getElementById('lightboxVideo'), lbCap=document.getElementById('lightboxCaption');
+
+    function openLightbox(folder,index){
+        curFolder=folder; curIdx=index;
+        const list=galleryData[folder]||[]; const item=list[index]; if(!item) return;
+        if(item.type==='image'){ lbImg.src=item.src; lbImg.style.display='block'; lbVid.style.display='none'; lbVid.pause(); }
+        else{ lbVid.src=item.src; lbVid.style.display='block'; lbImg.style.display='none'; lbVid.play(); }
+        lbCap.textContent=`Project ${folder} — ${index+1} / ${list.length}`;
+        lb.classList.add('open');
+    }
+    function closeLightbox(){ lb.classList.remove('open'); lbVid.pause(); }
+    function nav(d){
+        const list=galleryData[curFolder]||[]; if(!list.length) return;
+        curIdx=(curIdx+d+list.length)%list.length;
+        openLightbox(curFolder,curIdx);
+    }
+    document.getElementById('lightboxClose').onclick=closeLightbox;
+    document.getElementById('lightboxPrev').onclick=()=>nav(-1);
+    document.getElementById('lightboxNext').onclick=()=>nav(1);
+    lb.addEventListener('click',e=>{ if(e.target===lb) closeLightbox(); });
+    document.addEventListener('keydown',e=>{ if(!lb.classList.contains('open'))return; if(e.key==='Escape')closeLightbox(); if(e.key==='ArrowLeft')nav(-1); if(e.key==='ArrowRight')nav(1); });
+    folders.forEach(f=>buildGallery(f));
+})();
+</script>
+</body>
+</html>

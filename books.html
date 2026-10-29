@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books | Zoha Abdul Sattar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .book-viewer-wrap{display:grid;grid-template-columns:0.9fr 1.1fr;gap:36px;align-items:start}
+        .book-list{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+        .book-mini{border:1px solid var(--border,#F2DCE2);background:var(--white);border-radius:16px;padding:16px;cursor:pointer;transition:0.25s;box-shadow:var(--shadow)}
+        .book-mini:hover{transform:translateY(-3px);border-color:var(--baby-pink);box-shadow:0 12px 24px rgba(109,59,80,0.1)}
+        .book-mini.active{background:linear-gradient(135deg,var(--baby-pink),var(--dusty-rose));color:white;border-color:transparent;box-shadow:0 12px 28px rgba(217,140,163,0.35)}
+        .book-mini.active h4,.book-mini.active p{color:white}
+        .book-mini h4{font-size:13.5px;margin-bottom:5px;color:var(--deep-plum)}
+        .book-mini p{font-size:11.5px;color:var(--text-muted);line-height:1.5}
+        .cs-badge{display:inline-block;background:#FFE4E6;color:#9F1239;border:1px solid #FECDD3;padding:3px 8px;border-radius:999px;font-size:9px;font-weight:800;margin-bottom:6px;letter-spacing:0.5px}
+        .book-mini.active .cs-badge{background:rgba(255,255,255,0.25);color:white;border-color:rgba(255,255,255,0.4)}
+        /* Cover */
+        .book-cover-area{margin-bottom:24px;text-align:center}
+        .book-cover{position:relative;width:230px;height:310px;margin:0 auto}
+        .book-front{width:100%;height:100%;background:linear-gradient(145deg,#D98CA3,#6D3B50);border-radius:6px 18px 18px 6px;color:white;padding:24px 18px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:12px 14px 32px rgba(109,59,80,0.25);position:relative;z-index:2}
+        .book-spine{position:absolute;left:-14px;top:0;width:16px;height:100%;background:#4A2E3D;border-radius:5px 0 0 5px;z-index:1}
+        .book-label{font-size:9px;font-weight:700;letter-spacing:1.5px;opacity:0.9}
+        .book-front h2{font-family:'Playfair Display',serif;font-size:1.3rem;line-height:1.3;margin:12px 0 6px}
+        .book-front p{font-size:12.5px;opacity:0.9;line-height:1.4}
+        .book-author{font-size:11px;margin-top:10px;opacity:0.85}
+        .book-icon{position:absolute;bottom:18px;right:18px;font-size:2rem;opacity:0.2;color:white}
+        .book-shadow{width:190px;height:18px;background:rgba(0,0,0,0.12);border-radius:50%;margin:14px auto 0;filter:blur(8px)}
+        .detail-card{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:22px;box-shadow:var(--shadow)}
+        .badge-available{background:#D1FADF;color:#065F46;padding:6px 12px;border-radius:999px;font-size:11px;font-weight:700;display:inline-flex;align-items:center;gap:6px}
+        .badge-soon{background:#FFE4E6;color:#9F1239;padding:6px 12px;border-radius:999px;font-size:11px;font-weight:700;display:inline-flex;align-items:center;gap:6px}
+        @media(max-width:900px){.book-viewer-wrap{grid-template-columns:1fr;gap:28px}.book-list{grid-template-columns:1fr 1fr}}
+        @media(max-width:480px){.book-list{grid-template-columns:1fr}.book-cover{width:200px;height:280px}}
+    </style>
+</head>
+<body>
+<header class="navbar">
+    <div class="container nav-container">
+        <a href="index.html" class="logo"><i class="fa-solid fa-heart"></i><span class="logo-text"><span class="logo-name">Zoha Abdul Sattar</span><span class="logo-sub">Portfolio</span></span></a>
+        <nav><ul class="nav-links" id="navLinks"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="skills.html">Skills</a></li><li><a href="projects.html">Projects</a></li><li><a href="services.html">Services</a></li><li><a href="books.html" class="active">Books</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+        <div class="nav-actions"><a href="contact.html" class="btn btn-primary btn-talk">Let's Talk <i class="fa-solid fa-paper-plane"></i></a><button class="menu-btn" id="menuBtn"><i class="fa-solid fa-bars"></i></button></div>
+    </div>
+</header>
+
+<main>
+    <section class="page-head"><div class="container"><h1>My Books</h1><p>All Books in PDF — Click to view details</p></div></section>
+    <section class="section"><div class="container"><div class="book-viewer-wrap">
+
+        <div>
+            <div class="book-cover-area">
+                <div class="book-cover"><div class="book-spine"></div><div class="book-front"><span class="book-label" id="mainLabel">AVAILABLE NOW</span><div><h2 id="mainTitle">Computer Fundamentals</h2><p id="mainSub">Practical Learning Concepts</p><div class="book-author">By Zoha Abdul Sattar</div></div><div class="book-icon"><i class="fa-solid fa-book-open"></i></div></div></div><div class="book-shadow"></div>
+            </div>
+            <div class="detail-card">
+                <span id="mainBadge" class="badge-available"><i class="fa-solid fa-check"></i> Available Now</span>
+                <h3 id="detailTitle" style="margin:14px 0 8px;color:var(--deep-plum);font-size:1.3rem">Computer Fundamentals</h3>
+                <p id="detailDesc" style="font-size:13.5px;color:var(--text-muted);line-height:1.6;margin-bottom:18px">Computer basics, fundamentals & practical exercises.</p>
+                <a id="openBtn" href="books/zoha-book-1.pdf" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center"><i class="fa-solid fa-book-open"></i> Open Book</a>
+            </div>
+        </div>
+
+        <div><h3 style="font-size:1.1rem;margin-bottom:16px;color:var(--deep-plum)">All Books</h3><div class="book-list" id="bookList"></div></div>
+
+    </div></div></section>
+</main>
+
+<footer class="footer"><div class="container footer-grid"><div><p class="footer-name">Zoha Abdul Sattar</p><p class="footer-text"><a href="https://wa.me/923707905040">03707905040</a> | <a href="mailto:zohaabdulsattar01@gmail.com">zohaabdulsattar01@gmail.com</a><br>Punjab, Pakistan</p></div><ul class="footer-links"><li><a href="about.html">About</a></li><li><a href="skills.html">Skills</a></li><li><a href="projects.html">Projects</a></li><li><a href="services.html">Services</a></li><li><a href="books.html">Books</a></li><li><a href="contact.html">Contact</a></li></ul></div><p class="copy">© <span id="currentYear">2026</span> Zoha Abdul Sattar. All rights reserved.</p></footer>
+
+<script src="js/main.js"></script>
+<script>
+const books=[
+ {id:1,title:"Computer Fundamentals",desc:"Computer basics, fundamentals & practical exercises.",status:"Available Now"},
+ {id:2,title:"Windows & File Management",desc:"Windows, desktop, folders, settings.",status:"Coming Soon"},
+ {id:3,title:"Typing Mastery",desc:"Keyboard skills, accuracy, speed.",status:"Coming Soon"},
+ {id:4,title:"Microsoft Word",desc:"Document creation, formatting.",status:"Coming Soon"},
+ {id:5,title:"Microsoft Excel",desc:"Spreadsheets, formulas, charts.",status:"Coming Soon"},
+ {id:6,title:"Microsoft PowerPoint",desc:"Slides, layouts, animations.",status:"Coming Soon"},
+ {id:7,title:"Internet, Email & Safety",desc:"Browsing, email, privacy.",status:"Coming Soon"},
+ {id:8,title:"Programming Fundamentals",desc:"Logic, algorithms, functions.",status:"Coming Soon"},
+ {id:9,title:"C Programming",desc:"C syntax, arrays, functions.",status:"Coming Soon"},
+ {id:10,title:"HTML: Building Web Pages",desc:"HTML tags, links, tables.",status:"Coming Soon"},
+ {id:11,title:"CSS: Styling Websites",desc:"Colours, layouts, responsive.",status:"Coming Soon"},
+ {id:12,title:"JavaScript",desc:"DOM, events, modern JS.",status:"Coming Soon"},
+ {id:13,title:"PHP & MySQL",desc:"Server-side, databases.",status:"Coming Soon"},
+ {id:14,title:"Python Programming",desc:"Python syntax & concepts.",status:"Coming Soon"},
+ {id:15,title:"UI/UX Design",desc:"Wireframes, prototypes.",status:"Coming Soon"},
+ {id:16,title:"Full-Stack Projects",desc:"Complete practical projects.",status:"Coming Soon"},
+];
+const list=document.getElementById('bookList');
+books.forEach(b=>{
+ const div=document.createElement('div');
+ div.className='book-mini'+(b.id===1?' active':'');
+ div.innerHTML=`${b.id!==1?`<span class="cs-badge"><i class="fa-solid fa-clock"></i> ${b.status.toUpperCase()}</span>`:''}<h4>${b.title}</h4><p>${b.desc}</p>`;
+ div.onclick=()=>selectBook(b.id);
+ list.appendChild(div);
+});
+function selectBook(id){
+ const b=books.find(x=>x.id===id);
+ document.querySelectorAll('.book-mini').forEach((el,i)=>el.classList.toggle('active',i+1===id));
+ document.getElementById('mainTitle').textContent=b.title;
+ document.getElementById('detailTitle').textContent=b.title;
+ document.getElementById('detailDesc').textContent=b.desc;
+ document.getElementById('mainSub').textContent=b.desc;
+ document.getElementById('mainLabel').textContent=b.status.toUpperCase();
+ const badge=document.getElementById('mainBadge');
+ const btn=document.getElementById('openBtn');
+ badge.textContent=b.status;
+ if(b.status==="Coming Soon"){
+   badge.className='badge-soon'; badge.innerHTML='<i class="fa-solid fa-lock"></i> Coming Soon';
+   btn.style.opacity="0.5"; btn.style.pointerEvents="none"; btn.innerHTML='<i class="fa-solid fa-lock"></i> Coming Soon';
+ }else{
+   badge.className='badge-available'; badge.innerHTML='<i class="fa-solid fa-check"></i> Available Now';
+   btn.style.opacity="1"; btn.style.pointerEvents="auto"; btn.innerHTML='<i class="fa-solid fa-book-open"></i> Open Book';
+ }
+ document.getElementById('openBtn').href=`books/zoha-book-${id}.pdf`;
+}
+selectBook(1);
+</script>
+</body>
+</html>
